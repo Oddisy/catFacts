@@ -31,7 +31,9 @@ const readingTime = () => {
 }}
 
 const removeCustomError = () => {
-    myError.textContent = catQuote.textContent === "" ? "loading..." : "";
+if(catQuote.textContent !== ""){
+myError.textContent = ""
+}
 }
 
 const loading = () => {

@@ -24,7 +24,7 @@ const readingTime = () => {
     if (factLength <= 15){
         setTimeout(() => {
             generateCatApi()
-         }, 4000);
+         }, 5000);
     }else if((factLength > 15)&&(readingLength <= 25)){
             setTimeout(() => {
                 generateCatApi()

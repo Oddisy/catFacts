@@ -33,7 +33,7 @@ const readingTime = () => {
 
 const removeCustomError = () => {
 if(catQuote.textContent !== ""){
-    myError.textContent = ""
+myError.textContent = ""
 }
 }
 

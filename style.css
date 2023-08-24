@@ -53,14 +53,14 @@ h4{
     .main-container{
 width: 80%;
 height: 70vh;
-    }
+    }}
     @media screen  and (max-width:600px) {
         .main-container{
     width: 90%;
-    height: 90vh;
+    height: 80vh;
         }
         h4,h3{
-            font-size: 1rem;
+            font-size: 0.8rem;
         }
     
 }

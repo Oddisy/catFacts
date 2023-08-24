@@ -10,11 +10,12 @@ async function generateCatApi() {
         let response = await request.json();
         catQuote.textContent = response.fact;
         factLength = response.fact.length;
-        loading();
-        removeCustomError()
+        removeCustomError();
+        removeLoading();
     }
     catch(error){
-        myError.textContent="Failed to load, Please check your internet connection, and try again";
+        myError.textContent="Failed to load, Please check your internet connection, and try again.";
+        myLoading.textContent = ""
     }
 }
 // function to set time out base on reading length 
@@ -31,18 +32,30 @@ const readingTime = () => {
 }}
 
 const removeCustomError = () => {
-    myError.textContent = catQuote.textContent === "" ? "loading..." : "";
+if(catQuote.textContent !== ""){
+    myError.textContent = ""
 }
+}
+
 
 const loading = () => {
     myLoading.textContent = catQuote.textContent === "" ? "loading..." : "";
 }
+loading()
 
-setInterval(() => {
-startEvent()
-}, 5000);
+const removeLoading = () => {
+!(loading())
+}
+
+
+
+
+
 // generate quote when browser loads 
 startEvent = () => {
-document.addEventListener('DOMContentLoaded', generateCatApi());
+        document.addEventListener('DOMContentLoaded', generateCatApi());
 }
+setInterval(() => {
+    startEvent()
+    }, 5000);
 
